@@ -3,7 +3,8 @@ http://www.crutchfield.com/S-9nWHkoAgrEp/
 http://www.crutchfield.com/S-TWcbiNReN5e/
 http://www.apple.com/ca/
 http://www.apple.com
-http://stackoverflow.com/questions/12162047/sublime-text-editor-how-to-select-all-instances-of-selected-region
+http://stackoverflow.com/questions/15819050/pandas-dataframe-concat-vs-append
+http://stackoverflow.com/questions/12229124/stacking-numpy-arrays
 http://www.apple.com/fr/
 https://fr-ca.facebook.com/
 https://fr-fr.facebook.com/
