@@ -6,7 +6,6 @@ import re
 import time
 import cProfile
 from MinHash import compute_signature, MinHash_set, jaccard_sim
-
 from collections import defaultdict as ddict
 
 fn = 'url.txt'
@@ -46,3 +45,22 @@ end = time.time()
 print(end-start)
 
 cProfile.run('performance_test_function(soup, n)')
+
+
+with open('dell.txt', 'r') as file:
+    url_list = [line.rstrip('\n') for line in file]
+url_list
+MinHash_dict = ddict()
+n = 25
+for url in url_list:
+    soup = requests.get(url).text
+    url_sign = compute_signature(soup, shingle_size=9)
+    MinHash_dict[url] = MinHash_set(url_sign, n)
+
+url_ca = "http://www.dell.ca/"
+
+minhash_el = MinHash_dict[url_ca]
+sim_list = {k: jaccard_sim(minhash_el, v) for k,v in MinHash_dict.items()}
+for key in sim_list:
+    print(key, sim_list[key])
+
